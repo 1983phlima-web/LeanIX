@@ -20,18 +20,31 @@ Modo suggest-update opcional, sem gravar no LeanIX automaticamente
 
 # STACK
 Python 3.12
+
 FastAPI
+
 httpx
+
 pydantic v2
+
 uvicorn
+
 structlog ou loguru
+
 pytest
+
 python-dotenv
+
 tenacity para retry
+
 LangChain apenas se realmente necessário e preferir implementação simples e explícita
+
 OpenAI SDK ou interface abstrata de LLM provider
+
 FAISS ou Chroma para vetor store local
+
 Docker
+
 Ruff + Black + mypy
 
 # REQUISITOS
@@ -125,6 +138,7 @@ Nunca retornar saída sem campo sources
 Toda sugestão deve ser classificada como suggestion, fact ou hypothesis
 
 # TESTES
+
 -Criar:
 testes unitários para os services
 mock do LeanIX GraphQL client
@@ -132,6 +146,7 @@ mock do LLM client
 testes para policy engine
 teste de integração do endpoint /query
 Requisitos de documentação
+
 -Gerar:
 README.md completo
 instruções de setup local
@@ -150,16 +165,19 @@ testes
 # DIRECIONAMENTO TÉCNICO
 
 Eu seguiria a MVP assim:
+
 **Fase 1**
 - FastAPI
 - cliente LeanIX GraphQL
 - endpoint `/query`
 - resposta com fontes
 - modo read-only
+  
 **Fase 2**
 - RAG local com ADRs e padrões
 - análise de gaps
 - score de confiança
+  
 **Fase 3**
 - sugestões de enriquecimento
 - fila de aprovação
